@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box; /* يجعل قياس العناصر أكثر دقة */
+}
+
+body {
+    font-family: Arial, sans-serif; /* اختيار خط */
+    margin: 0; /* إزالة الهوامش الافتراضية */
+    height: 100vh; /* جعل ارتفاع الجسم 100% من ارتفاع النافذة */
+    overflow: hidden; /* إخفاء أي محتوى زائد */
+    animation: backgroundAnimation 10s infinite alternate; /* تطبيق الانيميشن */
+    display: flex; /* جعل الجسم مرنًا */
+    justify-content: center; /* توسيط المحتوى أفقيًا */
+    align-items: center; /* توسيط المحتوى عموديًا */
+}
+
+/* تعريف انيميشن الخلفية */
+@keyframes backgroundAnimation {
+    0% {
+        background-color: #3498db; /* لون أزرق */
+    }
+    50% {
+        background-color: #9b59b6; /* لون بنفسجي */
+    }
+    100% {
+        background-color: #e74c3c; /* لون أحمر */
+    }
+}
+
+.container {
+    text-align: center; /* توسيط النص */
+    position: relative; /* جعل الحاوية موضع نسبي */
+    width: 100%; /* عرض الحاوية 100% */
+    max-width: 400px; /* أقصى عرض للحاوية */
+    z-index: 1; /* لضمان ظهور المحتوى فوق الخلفية */
+}
+
+.question-box {
+    background-color: rgba(255, 255, 255, 0.9); /* خلفية بيضاء مع شفافية */
+    border-radius: 10px; /* زوايا ناعمة للمستطيل */
+    padding: 10px 20px; /* هوامش داخلية للمستطيل */
+    display: inline-block; /* يجعل العرض بحجم المحتوى فقط */
+    margin-bottom: 20px; /* مسافة بين المستطيل والأزرار */
+    font-size: 20px; /* حجم خط السؤال */
+}
+
+.button-container {
+    display: flex; /* استخدام flexbox لتوزيع الأزرار */
+    justify-content: center; /* توسيط الأزرار أفقيًا */
+    gap: 20px; /* إضافة مسافة بين الأزرار */
+}
+
+button {
+    padding: 10px 20px; /* هوامش داخلية للزر */
+    font-size: 16px; /* حجم الخط */
+    margin: 10px; /* هوامش خارجية بين الأزرار */
+    cursor: pointer; /* تغيير المؤشر عند التمرير فوق الزر */
+}
+
+#no {
+    transition: transform 0.5s; /* إضافة تأثير انتقال */
+    position: absolute; /* جعل الزر موضعه مطلقًا */
+}
+
+.popup {
+    display: none; /* إخفاء الرسالة في البداية */
+    position: fixed; /* جعل الرسالة ثابتة */
+    top: 50%; /* توسيط الرسالة عموديًا */
+    left: 50%; /* توسيط الرسالة أفقيًا */
+    transform: translate(-50%, -50%); /* استخدام التحويل للتوسيع */
+    background-color: rgba(255, 0, 0, 0.8); /* خلفية حمراء مع الشفافية */
+    color: white; /* لون النص */
+    padding: 20px; /* هوامش داخلية للرسالة */
+    border-radius: 8px; /* زوايا دائرية */
+    z-index: 10; /* جعل الرسالة فوق العناصر الأخرى */
+}
